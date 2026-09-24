@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplos</title>
+</head>
+<body>
+    <h1 id="titulo">Olá, Visitante</h1>
+
+    <button id="botao">Clique</button>
+
+    <button id="botao2">clique para alterar o botao1</button>
+
+    <button onclick="location.reload()">Reiniciar página</button>
+
+    <script>
+        const botao = document.getElementById("botao")
+        const titulo= document.getElementById("titulo")
+        const botao2= document.getElementById("botao2")
+        const botoes= document.getElementsByTagName("button")
+
+        botao.addEventListener("click", () =>{
+            titulo.textContent = "o botão recebeu um click"
+        })
+        botao2.addEventListener("click", () =>{
+            botao.textContent= "click para alterar o title"
+        })
+
+        botao2.addEventListener("blur", () => {
+            titulo.style = "color: red;"
+        })
+        titulo.addEventListener("mousedown", (event) => {
+            event.target.style = "color: green"
+        })
+        titulo.addEventListener("mouseup", (event) => {
+            titulo.style = "color: yellow"
+        })
+        botoes.addEventListener("mouseup", (event)=> {
+            event.target.style = "color: white"
+        })
+    </script>
+</body>
+</html>
